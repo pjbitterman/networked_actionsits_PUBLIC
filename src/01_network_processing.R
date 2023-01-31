@@ -754,17 +754,17 @@ mixingmatrix(net.bipartite.asnet, "deg.cent")
 
 ### try to run the ergm ---- 
 # add the joint collaboration matrices into the model
-em.scale.function.jointcollabs <- ergm(net.bipartite.asnet ~ edges + 
-                    gwdegree() + 
-                    gwb2degree() +
+em.scale.function.jointcollabs <- ergm(net.bipartite.asnet ~ edges +
+                     #gwb1degree(),
+                     gwb2degree(),
                     #nodecov("deg.cent") +
-                    nodefactor("scale") +
-                    nodematch("scale") +
-                    b2factor("work.wastewater") +
+                   # nodefactor("scale") +
+                  #  nodematch("scale") +
+                   # b2factor("work.wastewater") +
                     #b2factor("work.forestry") +
                     #b2factor("work.rivercorr") +
-                    b2factor("work.ag") +
-                    b2factor("work.dev") +
+                    #b2factor("work.ag") +
+                    #b2factor("work.dev") +
                     #b2factor("work.sw") +
                     # nodematch("work.wastewater") +
                     # nodematch("work.forestry") +
@@ -772,12 +772,12 @@ em.scale.function.jointcollabs <- ergm(net.bipartite.asnet ~ edges +
                     # nodematch("work.ag") +
                     # nodematch("work.dev") +
                     # nodematch("work.sw") +
-                    edgecov(m.collabs.all) +
-                    edgecov(m.collabs.info) +
-                    edgecov(m.collabs.fin) +
-                    edgecov(m.collabs.proj) +
-                    edgecov(m.collabs.rep) +
-                    edgecov(m.collabs.ta),
+                    #edgecov(m.collabs.all) +
+                    #edgecov(m.collabs.info) +
+                    #edgecov(m.collabs.fin) +
+                    #edgecov(m.collabs.proj) +
+                    #edgecov(m.collabs.rep) +
+                    #edgecov(m.collabs.ta),
                     ### if the next two lines run, the Pr(>|z|) goes to 1
                     ### for everything
                     #edgecov(net.bipartite.asnet, "collabProportion"),
